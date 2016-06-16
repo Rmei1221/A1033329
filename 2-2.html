@@ -1,0 +1,63 @@
+<?php
+
+if(isset($_POST["area_name"])){
+	echo $_POST["area_name"];
+	exit();
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>2-2</title>
+</head>
+<body>
+
+<script type="text/javascript">
+		var xhr;
+
+		function run_ajax() {
+		
+			xhr=new XMLHttpRequest();
+			if(xhr.overrideMimeType) 
+				xhr.overrideMimeType("text/xml"); 
+		
+		
+		xhr.onreadystatechange=getData;
+		
+		xhr.open("post","config.php",true);
+		xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded,charset=UTF-8');
+		
+		value1=document.getElementById('area_name').value;
+		
+		xhr.send("area_name"+value1);
+
+}
+	function getData (){
+		if (xhr.readyState==4)
+		if(xhr.status==200)
+			document.getElementById("show").innerHTML=xhr.responseText;
+			//document.getElementById("haha").innerHTML=xhr.responseText;
+}		
+	</script>
+
+	<!--使用ajax從後台抓出資料-->
+	<form>
+	<!--此為範例 請自行修改-->
+		<select name="YourLocation">
+　			<option value="Taipei">台北市</option>
+			<option value="Tainan">台南市</option>
+　			<option value="Kaohsiung">高雄市</option>
+		</select>
+		<select name="area">
+			
+		</select>
+	</form>
+	<span id="show">?</span>
+	<!--3-3題-->縣市+區域<input type="text" id="address"></br>
+	<!--加分題(需chrome可用)--><input type="button" value="下載">
+</body>
+</body>
+</html>
+
+
