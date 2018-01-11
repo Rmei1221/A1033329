@@ -16,7 +16,7 @@ $mail->Post=465;
 
 $mail->CharSet="utf-8";
 $mail->Username = "sshes1221@gmail.com";
-$mail->Password = "ji394rmp4ru,6";  //我的gmail帳號和密碼
+$mail->Password = "ccc";  //我的gmail帳號和密碼
 
 $mail->From = "sshes1221@gmail.com"; //設定寄件者信箱
 $mail->FromName = "A1033329"; //設定寄件者姓名 
